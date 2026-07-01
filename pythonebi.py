@@ -9,6 +9,7 @@ import mido
 import numpy
 import pyaudio
 import keyboard
+import python-rtmidi
 outtone = 0
 fundamental_note = 0
 overtones = [fundamental_note, fundamental_note + 12, fundamental_note + 19, fundamental_note + 24,
