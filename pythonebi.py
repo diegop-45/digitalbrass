@@ -4,7 +4,6 @@
 #I don't know how that part works on the python side of things so go check it out if you're interested!
 print("Press Q to exit")
 print("This program uses the keyboard 1,2,3,4 as valves, then you can buzz with a mouthpiece to control pitch")
-import mouse
 import time
 import mido
 import numpy
