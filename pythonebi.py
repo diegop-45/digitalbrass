@@ -105,7 +105,6 @@ def init_port_check():
             print("No Ports Found, Please Check Ports and Restart Program")
         elif len(midiport) > 0:
             for number, letter in enumerate(midiport):
-            #This one I took from this StackOverflow question: https://stackoverflow.com/questions/29811082/how-to-print-out-a-numbered-list-in-python-3
                 print((int(number) + 1), letter)
             desired_port = int(input("Enter desired midi port WHOLE NUMBER (1-16): "))
             if 0 < desired_port < (int(len(midiport)) + 1) and (type(desired_port) == int):
