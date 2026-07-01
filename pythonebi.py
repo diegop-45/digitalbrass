@@ -211,7 +211,7 @@ def pos_checks():
         print("Fundamental:", fundamental_note, "Sounds as:", semitone, "Playing?", playing)
 def midiupdates():
     global outtone, pressure, playing
-    #The reason why the start message for the next note happens here as opposed to during the audio analysis is because the note needs to be refrenced with pos_checks() first, however this does incur a bit of delay when switching/starting notes
+    #The reason why the start message for the next note happens here as opposed to during the audio analysis is because the note needs to be refrenced with pos_checks() first
     if pressure > 7 and playing is False:
         playing = True
         newmsg = mido.Message('note_on', channel=0, note=outtone, velocity=pressure)
@@ -233,7 +233,6 @@ def midiupdates():
             print("Updating as", updates, "On Note:", outtone)
 print("Starting Midi Output")
 while True:
-    #The order of operations is chosen as such so that there is a record of the last tone played from the latest loop, then frequency analysis can happen on the current frame, then the midi update can refrence both at the same time. Also because each following process relies on data from the previous
     oldtone = outtone
     oldpressure = pressure
     mzucker_analysis()
